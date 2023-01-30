@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  owner:
+    build: ./Owner
+    container_name: owner
+    restart: always
+    ports:
+      - "8080:8080"
+  owner_db:
+    container_name: owner_db
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_DB=owner_db
+      - POSTGRES_USER=Mardali
+      - POSTGRES_PASSWORD=Mardali
+    volumes:
+      - db:/var/lib/postgresql/owner_db
+    ports:
+      - "5433:5432"
+volumes:
+  db:

@@ -1,0 +1,9 @@
+FROM alpine
+
+WORKDIR /app
+
+RUN apk add openjdk17
+
+COPY target/Owner-1.0.jar /app.jar
+
+ENTRYPOINT ["java", "-jar", "/app.jar"]
