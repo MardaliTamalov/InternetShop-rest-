@@ -1,6 +1,9 @@
 package com.example.owner.service;
 
-public interface AccountService {
+import com.example.owner.dto.AccountDto;
+import org.springframework.security.core.userdetails.UserDetails;
 
+public interface AccountService {
+void addAccount(UserDetails userDetails, AccountDto accountDto);
 
 }

@@ -19,7 +19,9 @@ public class Account {
     private String number;
 
     @Column(name = "amount")
-    private Integer amount;
+    private Double amount;
 
-
+    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.PERSIST})
+    @JoinColumn(name = "user_id",referencedColumnName = "id")
+    private User user;
 }

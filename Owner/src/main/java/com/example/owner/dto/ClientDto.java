@@ -9,5 +9,5 @@ import lombok.Data;
 public class ClientDto {
 
     private String name;
-    private Integer surname;
+    private String surname;
 }

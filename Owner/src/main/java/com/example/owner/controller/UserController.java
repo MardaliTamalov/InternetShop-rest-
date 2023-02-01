@@ -2,7 +2,6 @@ package com.example.owner.controller;
 
 import com.example.owner.dto.UserDto;
 import com.example.owner.service.UserService;
-import com.example.owner.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,10 +10,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 @RequiredArgsConstructor
 
-public class ControllerUser {
+public class UserController {
     private final UserService userService;
 
-    @PostMapping("/user")
+    @PostMapping("add-user")
     public ResponseEntity<?> addUser(@RequestBody UserDto userDto) {
         userService.addUser(userDto);
         return ResponseEntity.ok().build();

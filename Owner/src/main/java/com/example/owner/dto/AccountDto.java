@@ -9,5 +9,5 @@ import lombok.Data;
 public class AccountDto {
 
     private String number;
-    private Integer Account;
+    private Double amount;
 }

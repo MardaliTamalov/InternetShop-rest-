@@ -23,10 +23,7 @@ public class Client {
     private String surname;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id",referencedColumnName = "client_id")
-    private Client client;
+    @JoinColumn(name = "user_id",referencedColumnName = "id")
+    private User user;
 
-    @OneToOne(cascade = {CascadeType.MERGE,CascadeType.DETACH,CascadeType.PERSIST,CascadeType.REFRESH})
-    @JoinColumn(name = "account_id",referencedColumnName = "id")
-    private Account account;
 }

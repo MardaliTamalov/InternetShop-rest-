@@ -30,6 +30,7 @@ public class SecurityConfig {
                 .csrf().disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/login").permitAll()
+                .requestMatchers("/user/add-user").anonymous()
                 .anyRequest().authenticated()
                 .and()
                 .logout()
