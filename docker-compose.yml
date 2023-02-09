@@ -17,6 +17,33 @@ services:
     volumes:
       - db:/var/lib/postgresql/owner_db
     ports:
-      - "5433:5432"
+      - "5433:5433"
+    command: -p 5433
+  product_db:
+    container_name: product_db
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_DB=product_db
+      - POSTGRES_USER=Mardali
+      - POSTGRES_PASSWORD=Mardali
+    volumes:
+      - db:/var/lib/postgresql/product_db
+    ports:
+      - "5434:5434"
+    command: -p 5434
+  order_db:
+      container_name: order_db
+      image: postgres
+      restart: always
+      environment:
+        - POSTGRES_DB=order_db
+        - POSTGRES_USER=Mardali
+        - POSTGRES_PASSWORD=Mardali
+      volumes:
+        - db:/var/lib/postgresql/order_db
+      ports:
+        - "5431:5431"
+      command: -p 5431
 volumes:
   db:
