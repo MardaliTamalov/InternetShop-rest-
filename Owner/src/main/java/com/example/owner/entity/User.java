@@ -29,7 +29,6 @@ public class User {
     @Column(name = "password")
     private String password;
 
-
     @ManyToMany(cascade={CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},
     fetch = FetchType.EAGER)
     @JoinTable (name = "roles_users",

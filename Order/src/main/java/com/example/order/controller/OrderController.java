@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.*;
 
 public class OrderController {
     private final OrderService orderService;
-
     @PostMapping("/orders")
     public ResponseEntity<?> makeOrder(@RequestBody OrderDto orderDto){
         return ResponseEntity.status(HttpStatus.OK)
                 .body(orderService.makeOrder(orderDto));
     }
-
 }
